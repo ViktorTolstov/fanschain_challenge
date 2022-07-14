@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        /**
+             *     CSS CHALLENGE
+             * 
+             * Use the provided markup to create a navigation bar imitating the
+             * layout and behavior demonstrated in the screenshots and video.
+             * You don't have to worry about legacy browsers, the solution only
+             * has to work in the latest Google Chrome version.
+             * 
+             * The challenge can be completed fully with only the markup provided.
+             * If you feel that it is necessary to do so, you may modify the
+             * markup. JavaScript is another way to accomplish the desired result.
+             * 
+             * Keep in mind that solving the challenge by only using CSS is what
+             * we are most interested in.
+             * 
+             * Have fun!
+             *      
+             */
+
+        nav {
+            z-index: 1;
+            position: absolute;
+            top: 10%;
+            left: 40%;
+            transform: translate(-40%, -50%);
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            padding: 20px 0px;
+        }
+
+        ul li:first-child {
+            border-radius: 7px 0 0 7px;
+        }
+
+        ul li:last-child {
+            border-radius: 0 7px 7px 0;
+        }
+
+        li {
+            background-color: #2f43df;
+            border-left: 0.5px solid #0C86BE;
+            border-right: 0.5px solid #001d2a;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li:hover {
+            background-color: #0C86BE;
+        }
+
+        .submenu-content {
+            visibility: hidden;
+            padding: 0;
+            position: absolute;
+            min-width: 160px;
+            z-index: 1;
+            transition: .4s ease-out;
+            border-radius: 0px;
+            border: 1px solid #001d2a;
+        }
+
+        .submenu-content li {
+            float: none;
+            text-decoration: none;
+            display: block;
+            border: 0px;
+            border-radius: 0px !important;
+            text-align: right;
+        }
+
+        .submenu:hover .submenu-content {
+            visibility: visible;
+            transition: .4s ease-in;
+        }
+
+        .alerts {
+            position: relative;
+        }
+
+        .alerts span {
+            background-color: rgb(54, 216, 54);
+            border-radius: 50%;
+            font-size: 12px;
+            padding: 3px;
+            position: absolute;
+            top: -15%;
+            right: -10%;
+            transform: rotate(25deg);
+            z-index: 3;
+        }
+
+        @media screen and (max-width:1200px) {
+            .submenu {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            nav {
+                z-index: 1;
+                top: 0%;
+                left: 0%;
+                transform: translate(0%, 0%);
+                width: 100%;
+            }
+
+            ul {
+                display: grid;
+                width: 80%;
+                padding: 10% 10%;
+            }
+
+            li {
+                border-top: 0.5px solid #0C86BE;
+                border-bottom: 0.5px solid #001d2a;
+            }
+
+            ul li:first-child {
+                border-radius: 0;
+            }
+
+            ul li:last-child {
+                border-radius: 0;
+            }
+
+            .alerts span {
+                top: -15%;
+                right: -2%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#link">Home</a>
+                </li>
+                <li>
+                    <a href="#link">Explore</a>
+                </li>
+                <li>
+                    <a href="#link">Stacks</a>
+                </li>
+                <li>
+                    <a href="#link" class="alerts">Following <span>69</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="#link">Submenu <i class="fa fa-caret-down"></i></a>
+                    <ul class="submenu-content">
+                        <li>
+                            <a href="#">Item 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Item 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Veeeeeeeeeery long item 3</a>
+                        </li>
+                    </ul>
+                </li>
+                </li>
+                <li class="submenu">
+                    <a href="#link">Long submenu is long <i class="fa fa-caret-down"></i></a>
+                    <ul class="submenu-content">
+                        <li>
+                            <a href="#">Short</a>
+                        </li>
+                        <li>
+                            <a href="#">Shorter</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
